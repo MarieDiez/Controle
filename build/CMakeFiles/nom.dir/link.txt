@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,libnom.so -o libnom.so CMakeFiles/nom.dir/nom.c.o 

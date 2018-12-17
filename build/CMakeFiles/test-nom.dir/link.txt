@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-nom.dir/test-nom.c.o  -o test-nom -Wl,-rpath,"/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build" libnom.so 

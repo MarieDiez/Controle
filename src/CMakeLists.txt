@@ -3,9 +3,9 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
 project(Nom C)
 
 
-find_package(Fraction REQUIRED)
-include_directories(${FRACTION_INCLUDE_DIRS})
-link_directories(${FRACTION_LIB_DIRS})
+#find_package(Fraction REQUIRED)
+#include_directories(${FRACTION_INCLUDE_DIRS})
+#link_directories(${FRACTION_LIB_DIRS})
 
 
 add_library(nom SHARED nom.c nom.h nom.inc)
