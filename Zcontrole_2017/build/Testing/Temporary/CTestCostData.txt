@@ -1,0 +1,9 @@
+test-create_destroy[valgrind] 5 0.0628003
+test-create_destroy[normal] 6 0.000511971
+test-init-finish[valgrind] 6 0.0510239
+test-init-finish[normal] 6 0.000522296
+test-prime_factores_get_number[valgrind] 0 0
+test-prime_factores_get_number[normal] 0 0
+---
+test-prime_factores_get_number[valgrind]
+test-prime_factores_get_number[normal]

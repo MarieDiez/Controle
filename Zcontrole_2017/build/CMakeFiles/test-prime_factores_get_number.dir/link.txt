@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-prime_factores_get_number.dir/test-prime_factores_get_number.c.o  -o test-prime_factores_get_number -Wl,-rpath,"/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build" libprime-factors.so -lm 

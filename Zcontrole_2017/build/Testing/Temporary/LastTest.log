@@ -1,0 +1,130 @@
+Start testing: Dec 17 17:35 UTC
+----------------------------------------------------------
+1/6 Testing: test-create_destroy[valgrind]
+1/6 Test: test-create_destroy[valgrind]
+Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-create_destroy"
+Directory: /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build
+"test-create_destroy[valgrind]" start time: Dec 17 17:35 UTC
+Output:
+----------------------------------------------------------
+Prime-factors initialised
+6
+1 1 0 1 0 2 
+                                                ^ 25
+Prime-factors ended
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"test-create_destroy[valgrind]" end time: Dec 17 17:35 UTC
+"test-create_destroy[valgrind]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: test-create_destroy[normal]
+2/6 Test: test-create_destroy[normal]
+Command: "/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-create_destroy"
+Directory: /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build
+"test-create_destroy[normal]" start time: Dec 17 17:35 UTC
+Output:
+----------------------------------------------------------
+Prime-factors initialised
+6
+1 1 0 1 0 2 
+                                                ^ 25
+Prime-factors ended
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-create_destroy[normal]" end time: Dec 17 17:35 UTC
+"test-create_destroy[normal]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: test-init-finish[valgrind]
+3/6 Test: test-init-finish[valgrind]
+Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-init-finish"
+Directory: /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build
+"test-init-finish[valgrind]" start time: Dec 17 17:35 UTC
+Output:
+----------------------------------------------------------
+Prime-factors initialised
+Prime-factors ended
+<end of output>
+Test time =   0.31 sec
+----------------------------------------------------------
+Test Passed.
+"test-init-finish[valgrind]" end time: Dec 17 17:35 UTC
+"test-init-finish[valgrind]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: test-init-finish[normal]
+4/6 Test: test-init-finish[normal]
+Command: "/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-init-finish"
+Directory: /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build
+"test-init-finish[normal]" start time: Dec 17 17:35 UTC
+Output:
+----------------------------------------------------------
+Prime-factors initialised
+Prime-factors ended
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-init-finish[normal]" end time: Dec 17 17:35 UTC
+"test-init-finish[normal]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: test-prime_factores_get_number[valgrind]
+5/6 Test: test-prime_factores_get_number[valgrind]
+Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-prime_factores_get_number"
+Directory: /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build
+"test-prime_factores_get_number[valgrind]" start time: Dec 17 17:35 UTC
+Output:
+----------------------------------------------------------
+==10811== Invalid write of size 4
+==10811==    at 0x4847573: prime_factors_create_full (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/libprime-factors.so)
+==10811==    by 0x10914A: main (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-prime_factores_get_number)
+==10811==  Address 0x4bce090 is 0 bytes after a block of size 0 alloc'd
+==10811==    at 0x483777F: malloc (vg_replace_malloc.c:299)
+==10811==    by 0x484756A: prime_factors_create_full (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/libprime-factors.so)
+==10811==    by 0x10914A: main (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-prime_factores_get_number)
+==10811== 
+==10811== Invalid read of size 8
+==10811==    at 0x4847592: prime_factors_create_full (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/libprime-factors.so)
+==10811==    by 0x10914A: main (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-prime_factores_get_number)
+==10811==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==10811== 
+==10811== 
+==10811== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==10811==  Access not within mapped region at address 0x0
+==10811==    at 0x4847592: prime_factors_create_full (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/libprime-factors.so)
+==10811==    by 0x10914A: main (in /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-prime_factores_get_number)
+==10811==  If you believe this happened as a result of a stack
+==10811==  overflow in your program's main thread (unlikely but
+==10811==  possible), you can try to increase the size of the
+==10811==  main thread stack using the --main-stacksize= flag.
+==10811==  The main thread stack size used in this run was 8388608.
+<end of output>
+Test time =   0.62 sec
+----------------------------------------------------------
+Test Failed.
+"test-prime_factores_get_number[valgrind]" end time: Dec 17 17:35 UTC
+"test-prime_factores_get_number[valgrind]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: test-prime_factores_get_number[normal]
+6/6 Test: test-prime_factores_get_number[normal]
+Command: "/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build/test-prime_factores_get_number"
+Directory: /disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build
+"test-prime_factores_get_number[normal]" start time: Dec 17 17:35 UTC
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Failed.
+"test-prime_factores_get_number[normal]" end time: Dec 17 17:35 UTC
+"test-prime_factores_get_number[normal]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 17 17:35 UTC

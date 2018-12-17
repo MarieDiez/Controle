@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/src/prime-factors.h
+stdbool.h
+-
+
+/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/src/prime-factors.inc
+
+/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/src/test-write.c
+stdlib.h
+-
+assert.h
+-
+stdio.h
+-
+prime-factors.h
+/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/src/prime-factors.h
+prime-factors.inc
+/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/src/prime-factors.inc
+

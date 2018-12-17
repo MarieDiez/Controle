@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-create_destroy.dir/test-create_destroy.c.o  -o test-create_destroy -Wl,-rpath,"/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build" libprime-factors.so -lm 

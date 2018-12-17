@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-init-finish.dir/test-init-finish.c.o  -o test-init-finish -Wl,-rpath,"/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build" libprime-factors.so -lm 

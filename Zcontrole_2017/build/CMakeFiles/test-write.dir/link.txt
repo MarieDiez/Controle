@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-write.dir/test-write.c.o  -o test-write -Wl,-rpath,"/disk/win/Mes Dossiers/Cours/Licence/S3/C/CC_nbPremier/cc/build" libprime-factors.so -lm 

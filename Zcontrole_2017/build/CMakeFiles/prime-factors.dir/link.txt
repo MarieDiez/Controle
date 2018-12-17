@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC   -shared -Wl,-soname,libprime-factors.so -o libprime-factors.so CMakeFiles/prime-factors.dir/prime-factors.c.o -lm 
