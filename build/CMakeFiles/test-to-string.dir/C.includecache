@@ -6,23 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.h
+stdbool.h
+-
+stdio.h
+-
+
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.inc
+
 /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/polygon.c
 stdbool.h
 -
 stdio.h
 -
+stdlib.h
+-
 assert.h
 -
-polygon.h
-/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/polygon.h
-polygon.inc
-/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/polygon.inc
-
-/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/polygon.h
-stdbool.h
--
-stdio.h
--
-
-/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/polygon.inc
+./polygon.h
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.h
+./polygon.inc
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.inc
 

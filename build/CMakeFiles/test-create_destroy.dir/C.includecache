@@ -28,3 +28,15 @@ assert.h
 ./polygon.inc
 /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.inc
 
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/test-create_destroy.c
+stdlib.h
+-
+string.h
+-
+assert.h
+-
+./polygon.h
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.h
+./polygon.inc
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.inc
+

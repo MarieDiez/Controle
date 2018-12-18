@@ -78,6 +78,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
@@ -99,17 +110,6 @@ package_source:
 package_source/fast: package_source
 
 .PHONY : package_source/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -144,19 +144,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test-to-string
-
-# Build rule for target.
-test-to-string: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-to-string
-.PHONY : test-to-string
-
-# fast build rule for target.
-test-to-string/fast:
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/build
-.PHONY : test-to-string/fast
-
-#=============================================================================
 # Target rules for targets named test-init_finish
 
 # Build rule for target.
@@ -169,14 +156,41 @@ test-init_finish/fast:
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/build
 .PHONY : test-init_finish/fast
 
+#=============================================================================
+# Target rules for targets named test-create_destroy
+
+# Build rule for target.
+test-create_destroy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-create_destroy
+.PHONY : test-create_destroy
+
+# fast build rule for target.
+test-create_destroy/fast:
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/build
+.PHONY : test-create_destroy/fast
+
+#=============================================================================
+# Target rules for targets named test-to-string
+
+# Build rule for target.
+test-to-string: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-to-string
+.PHONY : test-to-string
+
+# fast build rule for target.
+test-to-string/fast:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/build
+.PHONY : test-to-string/fast
+
 polygon.o: polygon.c.o
 
 .PHONY : polygon.o
 
 # target to build an object file
 polygon.c.o:
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 .PHONY : polygon.c.o
 
 polygon.i: polygon.c.i
@@ -185,8 +199,9 @@ polygon.i: polygon.c.i
 
 # target to preprocess a source file
 polygon.c.i:
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 .PHONY : polygon.c.i
 
 polygon.s: polygon.c.s
@@ -195,9 +210,37 @@ polygon.s: polygon.c.s
 
 # target to generate assembly for a file
 polygon.c.s:
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 .PHONY : polygon.c.s
+
+test-create_destroy.o: test-create_destroy.c.o
+
+.PHONY : test-create_destroy.o
+
+# target to build an object file
+test-create_destroy.c.o:
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/test-create_destroy.c.o
+.PHONY : test-create_destroy.c.o
+
+test-create_destroy.i: test-create_destroy.c.i
+
+.PHONY : test-create_destroy.i
+
+# target to preprocess a source file
+test-create_destroy.c.i:
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/test-create_destroy.c.i
+.PHONY : test-create_destroy.c.i
+
+test-create_destroy.s: test-create_destroy.c.s
+
+.PHONY : test-create_destroy.s
+
+# target to generate assembly for a file
+test-create_destroy.c.s:
+	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/test-create_destroy.c.s
+.PHONY : test-create_destroy.c.s
 
 test-init_finish.o: test-init_finish.c.o
 
@@ -260,15 +303,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... test-to-string"
-	@echo "... test-init_finish"
 	@echo "... edit_cache"
+	@echo "... test-init_finish"
+	@echo "... test-create_destroy"
+	@echo "... test"
+	@echo "... test-to-string"
 	@echo "... package"
 	@echo "... package_source"
-	@echo "... test"
 	@echo "... polygon.o"
 	@echo "... polygon.i"
 	@echo "... polygon.s"
+	@echo "... test-create_destroy.o"
+	@echo "... test-create_destroy.i"
+	@echo "... test-create_destroy.s"
 	@echo "... test-init_finish.o"
 	@echo "... test-init_finish.i"
 	@echo "... test-init_finish.s"
