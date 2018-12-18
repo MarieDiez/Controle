@@ -121,7 +121,7 @@ Polygon* polygon_append(Polygon* polygon, double x, double y){
 
 Polygon* polygon_remove(Polygon* polygon, int position){
 	if (position <0 ){
-		position = (int)polygon->count+position;
+		position = ((int)polygon->count)+position;
 	}
 	if (abs(position) > (int)polygon->count){
 		return NULL;

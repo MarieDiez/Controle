@@ -30,7 +30,7 @@ int main(void) {
     }
     
     
-   // polygon_destroy(polygon);
+   polygon_destroy(polygon);
    
    
   }

@@ -1,1 +1,2 @@
-7:test-prepend[valgrind]
+1:test-append[valgrind]
+11:test-remove[valgrind]
