@@ -63,7 +63,22 @@ Polygon* polygon_copy(Polygon* dest, const Polygon* src){
 	return dest;
 }
 
-
+Polygon* polygon_prepend(Polygon* polygon, double x, double y){
+	Point pts;
+	pts.x = x;
+	pts.y = y;
+	Point *tabPoints = polygon->points;
+	polygon->count += 1;
+	polygon->points = malloc(sizeof(Point)*(polygon->count));
+	if (polygon->points){
+		polygon->points[0] = pts;
+		for(int i = 1; i < polygon->count; i++){
+			polygon->points[i] = tabPoints[i-1];
+		}
+		free(tabPoints);
+	}
+	return polygon;
+}
 
 
 

@@ -78,6 +78,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation\ C/Controle/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -99,17 +110,6 @@ package: preinstall
 package/fast: package
 
 .PHONY : package/fast
-
-# Special rule for the target package_source
-package_source:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation\ C/Controle/build/CPackSourceConfig.cmake
-.PHONY : package_source
-
-# Special rule for the target package_source
-package_source/fast: package_source
-
-.PHONY : package_source/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,6 +183,19 @@ test-init_finish/fast:
 .PHONY : test-init_finish/fast
 
 #=============================================================================
+# Target rules for targets named test-prepend
+
+# Build rule for target.
+test-prepend: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-prepend
+.PHONY : test-prepend
+
+# fast build rule for target.
+test-prepend/fast:
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/build
+.PHONY : test-prepend/fast
+
+#=============================================================================
 # Target rules for targets named test-to-string
 
 # Build rule for target.
@@ -204,6 +217,7 @@ polygon.c.o:
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 .PHONY : polygon.c.o
 
@@ -216,6 +230,7 @@ polygon.c.i:
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 .PHONY : polygon.c.i
 
@@ -228,6 +243,7 @@ polygon.c.s:
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 .PHONY : polygon.c.s
 
@@ -312,6 +328,33 @@ test-init_finish.c.s:
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/test-init_finish.c.s
 .PHONY : test-init_finish.c.s
 
+test-prepend.o: test-prepend.c.o
+
+.PHONY : test-prepend.o
+
+# target to build an object file
+test-prepend.c.o:
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/test-prepend.c.o
+.PHONY : test-prepend.c.o
+
+test-prepend.i: test-prepend.c.i
+
+.PHONY : test-prepend.i
+
+# target to preprocess a source file
+test-prepend.c.i:
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/test-prepend.c.i
+.PHONY : test-prepend.c.i
+
+test-prepend.s: test-prepend.c.s
+
+.PHONY : test-prepend.s
+
+# target to generate assembly for a file
+test-prepend.c.s:
+	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/test-prepend.c.s
+.PHONY : test-prepend.c.s
+
 test-to-string.o: test-to-string.c.o
 
 .PHONY : test-to-string.o
@@ -347,13 +390,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... package_source"
 	@echo "... test"
 	@echo "... test-create_destroy"
 	@echo "... test-copy_clone"
 	@echo "... test-init_finish"
+	@echo "... test-prepend"
 	@echo "... test-to-string"
 	@echo "... package"
-	@echo "... package_source"
 	@echo "... polygon.o"
 	@echo "... polygon.i"
 	@echo "... polygon.s"
@@ -366,6 +410,9 @@ help:
 	@echo "... test-init_finish.o"
 	@echo "... test-init_finish.i"
 	@echo "... test-init_finish.s"
+	@echo "... test-prepend.o"
+	@echo "... test-prepend.i"
+	@echo "... test-prepend.s"
 	@echo "... test-to-string.o"
 	@echo "... test-to-string.i"
 	@echo "... test-to-string.s"

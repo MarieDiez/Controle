@@ -47,5 +47,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test-create_destroy.dir/DependInfo.cmake"
   "CMakeFiles/test-copy_clone.dir/DependInfo.cmake"
   "CMakeFiles/test-init_finish.dir/DependInfo.cmake"
+  "CMakeFiles/test-prepend.dir/DependInfo.cmake"
   "CMakeFiles/test-to-string.dir/DependInfo.cmake"
   )
