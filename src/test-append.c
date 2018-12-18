@@ -17,13 +17,18 @@ int main(void) {
     assert(polygon->points == NULL);
     
     polygon = polygon_append(polygon,5,5);
-    polygon = polygon_insert(polygon,-101,10,10);
-    polygon = polygon_insert(polygon,100,15,15);
-    polygon = polygon_append(polygon,20,20);
-     polygon = polygon_insert(polygon,1,0,0);
+    polygon = polygon_append(polygon,50,50);
+    polygon = polygon_insert(polygon,-1,10,10);
+    polygon = polygon_insert(polygon,0,15,15);
+
     
-    for(int i = 0; i<5 ; i++)
-      printf("x : %.2f   y: %.2f\n",polygon->points[i].x,polygon->points[i].y);
+    for(int i = 0; i<4 ; i++)
+      if (polygon != NULL){
+       printf("x : %.2f   y: %.2f\n",polygon->points[i].x,polygon->points[i].y);
+      }
+     else {
+      printf("%d\n",i);
+     }
     
     polygon_destroy(polygon);
    

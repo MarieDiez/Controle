@@ -1,13 +1,13 @@
-test-init_finish[valgrind] 18 0.0386732
-test-init_finish[normal] 18 0.000419898
-test-to-string[valgrind] 18 0.0403352
-test-to-string[normal] 18 0.000432821
-test-create_destroy[valgrind] 17 0.0408433
-test-create_destroy[normal] 17 0.000493095
-test-copy_clone[valgrind] 9 0.0800394
-test-copy_clone[normal] 15 0.000522967
-test-prepend[valgrind] 3 0.239141
-test-prepend[normal] 4 0.00193572
-test-append[valgrind] 2 0.359747
-test-append[normal] 2 0.00381473
+test-init_finish[valgrind] 19 0.0363222
+test-init_finish[normal] 19 0.000685738
+test-to-string[valgrind] 19 0.0381216
+test-to-string[normal] 19 0.000803468
+test-create_destroy[valgrind] 18 0.0384716
+test-create_destroy[normal] 18 0.000778695
+test-copy_clone[valgrind] 10 0.0727202
+test-copy_clone[normal] 16 0.00048513
+test-prepend[valgrind] 4 0.177885
+test-prepend[normal] 5 0.00268952
+test-append[valgrind] 3 0.244549
+test-append[normal] 3 0.00444238
 ---

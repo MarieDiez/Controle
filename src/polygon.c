@@ -8,7 +8,7 @@
 static int counter = 0;
 
 bool polygon_init(void){
-	
+
 	if (!counter++){
 		assert(printf("Polygon initialised\n"));
 	}
@@ -33,7 +33,7 @@ Polygon* polygon_create(void){
 	Polygon * poly = malloc(sizeof(Polygon));
 	poly->count=0;
 	poly->points=NULL;
-	
+
 	return poly;
 }
 
@@ -46,7 +46,7 @@ Polygon* polygon_clone(const Polygon* polygon){
 
 	Polygon * dest = malloc(sizeof(Polygon));
 	dest= polygon_copy(dest,polygon);
-	
+
 	return dest;
 
 }
@@ -54,12 +54,12 @@ Polygon* polygon_clone(const Polygon* polygon){
 Polygon* polygon_copy(Polygon* dest, const Polygon* src){
 	dest->count=src->count;
 	dest->points = malloc(sizeof(Point)*dest->count);
-	
+
 	for (int i=0;i<dest->count;i++){
 		(dest->points[i]).x=(src->points[i]).x;
 		(dest->points[i]).y=(src->points[i]).y;
 	}
-	
+
 	return dest;
 }
 
@@ -81,36 +81,44 @@ Polygon* polygon_prepend(Polygon* polygon, double x, double y){
 }
 
 Polygon* polygon_insert(Polygon* polygon, int position, double x, double y){
-		if (position > polygon->count){
-			position = polygon->count;
-		}
+	if (position > (int)polygon->count){
+		return NULL;
+	}
+	if (position < 0){
+		position = (int)polygon->count;
 		
-			Point pts;
-			pts.x = x;
-			pts.y = y;
-			Point *tabPoints = polygon->points;
-			polygon->count += 1;
-			polygon->points = malloc(sizeof(Point)*(polygon->count));
-			if (polygon->points){
+	}
 
-				for(int i = 0; i < position; i++){
-					polygon->points[i] = tabPoints[i];
-				}
-				
-				polygon->points[position] = pts;
-				
-				for(int i = position+1; i < polygon->count; i++){
-					polygon->points[i] = tabPoints[i-1];
-				}
-				
-				free(tabPoints);
-			}
-			return polygon;
-		
+	Point pts;
+	pts.x = x;
+	pts.y = y;
+	Point *tabPoints = polygon->points;
+	polygon->count += 1;
+	polygon->points = malloc(sizeof(Point)*(polygon->count));
+	if (polygon->points){
+
+		for(int i = 0; i < position; i++){
+			polygon->points[i] = tabPoints[i];
+		}
+
+		polygon->points[position] = pts;
+
+		for(int i = position+1; i < polygon->count; i++){
+			polygon->points[i] = tabPoints[i-1];
+		}
+
+		free(tabPoints);
+	}
+	return polygon;
+
 }
 
 Polygon* polygon_append(Polygon* polygon, double x, double y){
 	return polygon_insert(polygon,polygon->count,x,y);
+}
+
+Polygon* polygon_remove(Polygon* polygon, int position){
+
 }
 
 
