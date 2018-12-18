@@ -139,7 +139,45 @@ Polygon* polygon_remove(Polygon* polygon, int position){
 	return polygon;
 }
 
+unsigned int polygon_count(const Polygon* polygon){
+	return polygon->count;
+}
 
+Point* polygon_get(const Polygon* polygon, int position){
+	if (position <0 ){
+		position = ((int)polygon->count)+position;
+	}
+	
+	return &polygon->points[position];
+}
+
+double point_get_x(const Point* point){
+	return point->x;
+}
+double point_get_y(const Point* point){
+	return point->y;
+}
+Point* point_set_x(Point* point, const double x){
+	point->x=x;
+}
+Point* point_set_y(Point* point, const double y){
+	point->y=y;
+}
+
+double point_distance(const Point* point_1, const Point* point_2){
+	double sum = abs(point_1->x-point_1->y) +  abs(point_2->x-point_2->y);
+	return sqrt(sum);	
+}
+
+double polygon_perimeter(const Polygon* polygon){
+	double somme=0;
+	for (int i =0 ; i<polygon->count-1;i++){
+		somme+=point_distance(polygon->points[i],polygon->points[i+1]);
+	}
+	somme+=point_distance(polygon->points[polygon->count],polygon->points[0]);
+	
+	return somme;
+}
 
 
 

@@ -26,7 +26,7 @@ foreach(FILENAME ${FILES})
 	# Ajout d'un exécutable dépendant également de polygon.c, polygon.h et polygon.inc
 	add_executable(${TEST} ${SRC} polygon.c polygon.h polygon.inc)
 	# Assemblage du programme de test avec la librairie polygon déjà fournie
-	target_link_libraries(${TEST} polygon)
+	target_link_libraries(${TEST} polygon m)
 	if(VALGRIND)
 		# Ajout d'un test en utilisant valgrind
 		add_test("${TEST}[valgrind]" ${VALGRIND} --leak-check=full --quiet --error-exitcode=1 ./${TEST})
