@@ -113,7 +113,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Nom
+CMAKE_PROJECT_NAME:STATIC=Polygon
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -212,6 +212,12 @@ Nom_BINARY_DIR:STATIC=/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Pr
 
 //Value Computed by CMake
 Nom_SOURCE_DIR:STATIC=/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src
+
+//Value Computed by CMake
+Polygon_BINARY_DIR:STATIC=/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
+
+//Value Computed by CMake
+Polygon_SOURCE_DIR:STATIC=/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src
 
 //Path to a program.
 VALGRIND:FILEPATH=/usr/bin/valgrind

@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-init_finish.dir/test-init_finish.c.o CMakeFiles/test-init_finish.dir/polygon.c.o  -o test-init_finish  -L"/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src" -Wl,-rpath,"/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src" -lpolygon 

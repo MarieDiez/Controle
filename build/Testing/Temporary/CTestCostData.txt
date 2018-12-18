@@ -1,0 +1,5 @@
+test-init_finish[valgrind] 1 1.19334
+test-init_finish[normal] 1 0.00811613
+test-to-string[valgrind] 1 0.728415
+test-to-string[normal] 1 0.00797905
+---

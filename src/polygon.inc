@@ -1,6 +1,6 @@
 struct _Polygon {
 
-	int count;
+	unsigned int count;
 	Point * points;
 
 };

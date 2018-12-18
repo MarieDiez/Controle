@@ -4,5 +4,7 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(test-nom[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-nom")
-add_test(test-nom[normal] "./test-nom")
+add_test(test-init_finish[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-init_finish")
+add_test(test-init_finish[normal] "./test-init_finish")
+add_test(test-to-string[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-to-string")
+add_test(test-to-string[normal] "./test-to-string")

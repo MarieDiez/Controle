@@ -56,40 +56,6 @@ CMAKE_BINARY_DIR = "/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Prog
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -100,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target package
 package: preinstall
@@ -123,18 +100,6 @@ package_source/fast: package_source
 
 .PHONY : package_source/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -145,17 +110,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -190,84 +144,114 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test-nom
+# Target rules for targets named test-to-string
 
 # Build rule for target.
-test-nom: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-nom
-.PHONY : test-nom
+test-to-string: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-to-string
+.PHONY : test-to-string
 
 # fast build rule for target.
-test-nom/fast:
-	$(MAKE) -f CMakeFiles/test-nom.dir/build.make CMakeFiles/test-nom.dir/build
-.PHONY : test-nom/fast
+test-to-string/fast:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/build
+.PHONY : test-to-string/fast
 
 #=============================================================================
-# Target rules for targets named nom
+# Target rules for targets named test-init_finish
 
 # Build rule for target.
-nom: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 nom
-.PHONY : nom
+test-init_finish: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-init_finish
+.PHONY : test-init_finish
 
 # fast build rule for target.
-nom/fast:
-	$(MAKE) -f CMakeFiles/nom.dir/build.make CMakeFiles/nom.dir/build
-.PHONY : nom/fast
+test-init_finish/fast:
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/build
+.PHONY : test-init_finish/fast
 
-nom.o: nom.c.o
+polygon.o: polygon.c.o
 
-.PHONY : nom.o
-
-# target to build an object file
-nom.c.o:
-	$(MAKE) -f CMakeFiles/nom.dir/build.make CMakeFiles/nom.dir/nom.c.o
-.PHONY : nom.c.o
-
-nom.i: nom.c.i
-
-.PHONY : nom.i
-
-# target to preprocess a source file
-nom.c.i:
-	$(MAKE) -f CMakeFiles/nom.dir/build.make CMakeFiles/nom.dir/nom.c.i
-.PHONY : nom.c.i
-
-nom.s: nom.c.s
-
-.PHONY : nom.s
-
-# target to generate assembly for a file
-nom.c.s:
-	$(MAKE) -f CMakeFiles/nom.dir/build.make CMakeFiles/nom.dir/nom.c.s
-.PHONY : nom.c.s
-
-test-nom.o: test-nom.c.o
-
-.PHONY : test-nom.o
+.PHONY : polygon.o
 
 # target to build an object file
-test-nom.c.o:
-	$(MAKE) -f CMakeFiles/test-nom.dir/build.make CMakeFiles/test-nom.dir/test-nom.c.o
-.PHONY : test-nom.c.o
+polygon.c.o:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
+.PHONY : polygon.c.o
 
-test-nom.i: test-nom.c.i
+polygon.i: polygon.c.i
 
-.PHONY : test-nom.i
+.PHONY : polygon.i
 
 # target to preprocess a source file
-test-nom.c.i:
-	$(MAKE) -f CMakeFiles/test-nom.dir/build.make CMakeFiles/test-nom.dir/test-nom.c.i
-.PHONY : test-nom.c.i
+polygon.c.i:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
+.PHONY : polygon.c.i
 
-test-nom.s: test-nom.c.s
+polygon.s: polygon.c.s
 
-.PHONY : test-nom.s
+.PHONY : polygon.s
 
 # target to generate assembly for a file
-test-nom.c.s:
-	$(MAKE) -f CMakeFiles/test-nom.dir/build.make CMakeFiles/test-nom.dir/test-nom.c.s
-.PHONY : test-nom.c.s
+polygon.c.s:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
+.PHONY : polygon.c.s
+
+test-init_finish.o: test-init_finish.c.o
+
+.PHONY : test-init_finish.o
+
+# target to build an object file
+test-init_finish.c.o:
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/test-init_finish.c.o
+.PHONY : test-init_finish.c.o
+
+test-init_finish.i: test-init_finish.c.i
+
+.PHONY : test-init_finish.i
+
+# target to preprocess a source file
+test-init_finish.c.i:
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/test-init_finish.c.i
+.PHONY : test-init_finish.c.i
+
+test-init_finish.s: test-init_finish.c.s
+
+.PHONY : test-init_finish.s
+
+# target to generate assembly for a file
+test-init_finish.c.s:
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/test-init_finish.c.s
+.PHONY : test-init_finish.c.s
+
+test-to-string.o: test-to-string.c.o
+
+.PHONY : test-to-string.o
+
+# target to build an object file
+test-to-string.c.o:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/test-to-string.c.o
+.PHONY : test-to-string.c.o
+
+test-to-string.i: test-to-string.c.i
+
+.PHONY : test-to-string.i
+
+# target to preprocess a source file
+test-to-string.c.i:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/test-to-string.c.i
+.PHONY : test-to-string.c.i
+
+test-to-string.s: test-to-string.c.s
+
+.PHONY : test-to-string.s
+
+# target to generate assembly for a file
+test-to-string.c.s:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/test-to-string.c.s
+.PHONY : test-to-string.c.s
 
 # Help Target
 help:
@@ -275,23 +259,22 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... install"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... test-nom"
+	@echo "... test-to-string"
+	@echo "... test-init_finish"
+	@echo "... edit_cache"
 	@echo "... package"
 	@echo "... package_source"
-	@echo "... install/local"
-	@echo "... nom"
 	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... nom.o"
-	@echo "... nom.i"
-	@echo "... nom.s"
-	@echo "... test-nom.o"
-	@echo "... test-nom.i"
-	@echo "... test-nom.s"
+	@echo "... polygon.o"
+	@echo "... polygon.i"
+	@echo "... polygon.s"
+	@echo "... test-init_finish.o"
+	@echo "... test-init_finish.i"
+	@echo "... test-init_finish.s"
+	@echo "... test-to-string.o"
+	@echo "... test-to-string.i"
+	@echo "... test-to-string.s"
 .PHONY : help
 
 
