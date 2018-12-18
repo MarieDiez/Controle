@@ -80,6 +80,39 @@ Polygon* polygon_prepend(Polygon* polygon, double x, double y){
 	return polygon;
 }
 
+Polygon* polygon_insert(Polygon* polygon, int position, double x, double y){
+		if (position > polygon->count){
+			position = polygon->count;
+		}
+		
+			Point pts;
+			pts.x = x;
+			pts.y = y;
+			Point *tabPoints = polygon->points;
+			polygon->count += 1;
+			polygon->points = malloc(sizeof(Point)*(polygon->count));
+			if (polygon->points){
+
+				for(int i = 0; i < position; i++){
+					polygon->points[i] = tabPoints[i];
+				}
+				
+				polygon->points[position] = pts;
+				
+				for(int i = position+1; i < polygon->count; i++){
+					polygon->points[i] = tabPoints[i-1];
+				}
+				
+				free(tabPoints);
+			}
+			return polygon;
+		
+}
+
+Polygon* polygon_append(Polygon* polygon, double x, double y){
+	return polygon_insert(polygon,polygon->count,x,y);
+}
+
 
 
 

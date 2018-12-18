@@ -89,17 +89,6 @@ package_source/fast: package_source
 
 .PHONY : package_source/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
@@ -110,6 +99,17 @@ package: preinstall
 package/fast: package
 
 .PHONY : package/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -142,6 +142,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named test-append
+
+# Build rule for target.
+test-append: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-append
+.PHONY : test-append
+
+# fast build rule for target.
+test-append/fast:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/build
+.PHONY : test-append/fast
 
 #=============================================================================
 # Target rules for targets named test-create_destroy
@@ -214,6 +227,7 @@ polygon.o: polygon.c.o
 
 # target to build an object file
 polygon.c.o:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
@@ -227,6 +241,7 @@ polygon.i: polygon.c.i
 
 # target to preprocess a source file
 polygon.c.i:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
@@ -240,12 +255,40 @@ polygon.s: polygon.c.s
 
 # target to generate assembly for a file
 polygon.c.s:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 .PHONY : polygon.c.s
+
+test-append.o: test-append.c.o
+
+.PHONY : test-append.o
+
+# target to build an object file
+test-append.c.o:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/test-append.c.o
+.PHONY : test-append.c.o
+
+test-append.i: test-append.c.i
+
+.PHONY : test-append.i
+
+# target to preprocess a source file
+test-append.c.i:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/test-append.c.i
+.PHONY : test-append.c.i
+
+test-append.s: test-append.c.s
+
+.PHONY : test-append.s
+
+# target to generate assembly for a file
+test-append.c.s:
+	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/test-append.c.s
+.PHONY : test-append.c.s
 
 test-copy_clone.o: test-copy_clone.c.o
 
@@ -391,16 +434,20 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... package_source"
+	@echo "... package"
+	@echo "... test-append"
 	@echo "... test"
 	@echo "... test-create_destroy"
 	@echo "... test-copy_clone"
 	@echo "... test-init_finish"
 	@echo "... test-prepend"
 	@echo "... test-to-string"
-	@echo "... package"
 	@echo "... polygon.o"
 	@echo "... polygon.i"
 	@echo "... polygon.s"
+	@echo "... test-append.o"
+	@echo "... test-append.i"
+	@echo "... test-append.s"
 	@echo "... test-copy_clone.o"
 	@echo "... test-copy_clone.i"
 	@echo "... test-copy_clone.s"
