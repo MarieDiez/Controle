@@ -1,27 +1,69 @@
-Start testing: Dec 18 14:12 CET
+Start testing: Dec 18 14:42 CET
 ----------------------------------------------------------
-1/6 Testing: test-create_destroy[valgrind]
-1/6 Test: test-create_destroy[valgrind]
+1/8 Testing: test-copy_clone[valgrind]
+1/8 Test: test-copy_clone[valgrind]
+Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-copy_clone"
+Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
+"test-copy_clone[valgrind]" start time: Dec 18 14:42 CET
+Output:
+----------------------------------------------------------
+Polygon initialised
+5.00
+32.00
+ 3 : 5.00
+ 3 : 32.00
+Polygon finished
+<end of output>
+Test time =   0.73 sec
+----------------------------------------------------------
+Test Passed.
+"test-copy_clone[valgrind]" end time: Dec 18 14:42 CET
+"test-copy_clone[valgrind]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/8 Testing: test-copy_clone[normal]
+2/8 Test: test-copy_clone[normal]
+Command: "/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build/test-copy_clone"
+Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
+"test-copy_clone[normal]" start time: Dec 18 14:42 CET
+Output:
+----------------------------------------------------------
+Polygon initialised
+5.00
+32.00
+ 3 : 5.00
+ 3 : 32.00
+Polygon finished
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test-copy_clone[normal]" end time: Dec 18 14:42 CET
+"test-copy_clone[normal]" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/8 Testing: test-create_destroy[valgrind]
+3/8 Test: test-create_destroy[valgrind]
 Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-create_destroy"
 Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
-"test-create_destroy[valgrind]" start time: Dec 18 14:12 CET
+"test-create_destroy[valgrind]" start time: Dec 18 14:42 CET
 Output:
 ----------------------------------------------------------
 Polygon initialised
 Polygon finished
 <end of output>
-Test time =   0.70 sec
+Test time =   0.68 sec
 ----------------------------------------------------------
 Test Passed.
-"test-create_destroy[valgrind]" end time: Dec 18 14:12 CET
+"test-create_destroy[valgrind]" end time: Dec 18 14:42 CET
 "test-create_destroy[valgrind]" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/6 Testing: test-create_destroy[normal]
-2/6 Test: test-create_destroy[normal]
+4/8 Testing: test-create_destroy[normal]
+4/8 Test: test-create_destroy[normal]
 Command: "/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build/test-create_destroy"
 Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
-"test-create_destroy[normal]" start time: Dec 18 14:12 CET
+"test-create_destroy[normal]" start time: Dec 18 14:42 CET
 Output:
 ----------------------------------------------------------
 Polygon initialised
@@ -30,32 +72,32 @@ Polygon finished
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test-create_destroy[normal]" end time: Dec 18 14:12 CET
+"test-create_destroy[normal]" end time: Dec 18 14:42 CET
 "test-create_destroy[normal]" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/6 Testing: test-init_finish[valgrind]
-3/6 Test: test-init_finish[valgrind]
+5/8 Testing: test-init_finish[valgrind]
+5/8 Test: test-init_finish[valgrind]
 Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-init_finish"
 Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
-"test-init_finish[valgrind]" start time: Dec 18 14:12 CET
+"test-init_finish[valgrind]" start time: Dec 18 14:42 CET
 Output:
 ----------------------------------------------------------
 Polygon initialised
 Polygon finished
 <end of output>
-Test time =   0.71 sec
+Test time =   0.69 sec
 ----------------------------------------------------------
 Test Passed.
-"test-init_finish[valgrind]" end time: Dec 18 14:12 CET
+"test-init_finish[valgrind]" end time: Dec 18 14:42 CET
 "test-init_finish[valgrind]" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/6 Testing: test-init_finish[normal]
-4/6 Test: test-init_finish[normal]
+6/8 Testing: test-init_finish[normal]
+6/8 Test: test-init_finish[normal]
 Command: "/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build/test-init_finish"
 Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
-"test-init_finish[normal]" start time: Dec 18 14:12 CET
+"test-init_finish[normal]" start time: Dec 18 14:42 CET
 Output:
 ----------------------------------------------------------
 Polygon initialised
@@ -64,33 +106,33 @@ Polygon finished
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test-init_finish[normal]" end time: Dec 18 14:12 CET
+"test-init_finish[normal]" end time: Dec 18 14:42 CET
 "test-init_finish[normal]" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/6 Testing: test-to-string[valgrind]
-5/6 Test: test-to-string[valgrind]
+7/8 Testing: test-to-string[valgrind]
+7/8 Test: test-to-string[valgrind]
 Command: "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-to-string"
 Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
-"test-to-string[valgrind]" start time: Dec 18 14:12 CET
+"test-to-string[valgrind]" start time: Dec 18 14:42 CET
 Output:
 ----------------------------------------------------------
 Polygon initialised
 p = [(0;0),(0;3),(4;0)]
 Polygon finished
 <end of output>
-Test time =   0.78 sec
+Test time =   0.73 sec
 ----------------------------------------------------------
 Test Passed.
-"test-to-string[valgrind]" end time: Dec 18 14:12 CET
+"test-to-string[valgrind]" end time: Dec 18 14:42 CET
 "test-to-string[valgrind]" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/6 Testing: test-to-string[normal]
-6/6 Test: test-to-string[normal]
+8/8 Testing: test-to-string[normal]
+8/8 Test: test-to-string[normal]
 Command: "/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build/test-to-string"
 Directory: /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/build
-"test-to-string[normal]" start time: Dec 18 14:12 CET
+"test-to-string[normal]" start time: Dec 18 14:42 CET
 Output:
 ----------------------------------------------------------
 Polygon initialised
@@ -100,8 +142,8 @@ Polygon finished
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"test-to-string[normal]" end time: Dec 18 14:12 CET
+"test-to-string[normal]" end time: Dec 18 14:42 CET
 "test-to-string[normal]" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Dec 18 14:12 CET
+End testing: Dec 18 14:42 CET

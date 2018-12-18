@@ -144,19 +144,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test-init_finish
-
-# Build rule for target.
-test-init_finish: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-init_finish
-.PHONY : test-init_finish
-
-# fast build rule for target.
-test-init_finish/fast:
-	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/build
-.PHONY : test-init_finish/fast
-
-#=============================================================================
 # Target rules for targets named test-create_destroy
 
 # Build rule for target.
@@ -168,6 +155,32 @@ test-create_destroy: cmake_check_build_system
 test-create_destroy/fast:
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/build
 .PHONY : test-create_destroy/fast
+
+#=============================================================================
+# Target rules for targets named test-copy_clone
+
+# Build rule for target.
+test-copy_clone: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-copy_clone
+.PHONY : test-copy_clone
+
+# fast build rule for target.
+test-copy_clone/fast:
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/build
+.PHONY : test-copy_clone/fast
+
+#=============================================================================
+# Target rules for targets named test-init_finish
+
+# Build rule for target.
+test-init_finish: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-init_finish
+.PHONY : test-init_finish
+
+# fast build rule for target.
+test-init_finish/fast:
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/build
+.PHONY : test-init_finish/fast
 
 #=============================================================================
 # Target rules for targets named test-to-string
@@ -188,8 +201,9 @@ polygon.o: polygon.c.o
 
 # target to build an object file
 polygon.c.o:
-	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 .PHONY : polygon.c.o
 
@@ -199,8 +213,9 @@ polygon.i: polygon.c.i
 
 # target to preprocess a source file
 polygon.c.i:
-	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 .PHONY : polygon.c.i
 
@@ -210,10 +225,38 @@ polygon.s: polygon.c.s
 
 # target to generate assembly for a file
 polygon.c.s:
-	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 .PHONY : polygon.c.s
+
+test-copy_clone.o: test-copy_clone.c.o
+
+.PHONY : test-copy_clone.o
+
+# target to build an object file
+test-copy_clone.c.o:
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/test-copy_clone.c.o
+.PHONY : test-copy_clone.c.o
+
+test-copy_clone.i: test-copy_clone.c.i
+
+.PHONY : test-copy_clone.i
+
+# target to preprocess a source file
+test-copy_clone.c.i:
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/test-copy_clone.c.i
+.PHONY : test-copy_clone.c.i
+
+test-copy_clone.s: test-copy_clone.c.s
+
+.PHONY : test-copy_clone.s
+
+# target to generate assembly for a file
+test-copy_clone.c.s:
+	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/test-copy_clone.c.s
+.PHONY : test-copy_clone.c.s
 
 test-create_destroy.o: test-create_destroy.c.o
 
@@ -304,15 +347,19 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test-init_finish"
-	@echo "... test-create_destroy"
 	@echo "... test"
+	@echo "... test-create_destroy"
+	@echo "... test-copy_clone"
+	@echo "... test-init_finish"
 	@echo "... test-to-string"
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... polygon.o"
 	@echo "... polygon.i"
 	@echo "... polygon.s"
+	@echo "... test-copy_clone.o"
+	@echo "... test-copy_clone.i"
+	@echo "... test-copy_clone.s"
 	@echo "... test-create_destroy.o"
 	@echo "... test-create_destroy.i"
 	@echo "... test-create_destroy.s"

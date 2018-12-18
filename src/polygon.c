@@ -41,3 +41,33 @@ void polygon_destroy(Polygon* polygon){
 	free(polygon->points);
 	free(polygon);
 }
+
+Polygon* polygon_clone(const Polygon* polygon){
+
+	Polygon * dest = malloc(sizeof(Polygon));
+	dest= polygon_copy(dest,polygon);
+	
+	return dest;
+
+}
+
+Polygon* polygon_copy(Polygon* dest, const Polygon* src){
+	dest->count=src->count;
+	dest->points = malloc(sizeof(Point)*dest->count);
+	
+	for (int i=0;i<dest->count;i++){
+		(dest->points[i]).x=(src->points[i]).x;
+		(dest->points[i]).y=(src->points[i]).y;
+	}
+	
+	return dest;
+}
+
+
+
+
+
+
+
+
+
