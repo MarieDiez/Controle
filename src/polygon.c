@@ -126,13 +126,13 @@ Polygon* polygon_remove(Polygon* polygon, int position){
 	if (abs(position) > (int)polygon->count){
 		return NULL;
 	}
-	
+
 	Point * tabPoints = malloc(sizeof(Point)*polygon->count-1);
 	for (int i=0;i<position;i++){
-			tabPoints[i]=polygon->points[i];
+		tabPoints[i]=polygon->points[i];
 	}
 	for (int i=position;i<polygon->count;i++){
-			tabPoints[i]=polygon->points[i+1];
+		tabPoints[i]=polygon->points[i+1];
 	}
 	free(polygon->points);
 	polygon->points=tabPoints;
@@ -142,12 +142,12 @@ Polygon* polygon_remove(Polygon* polygon, int position){
 unsigned int polygon_count(const Polygon* polygon){
 	return polygon->count;
 }
-
+/*
 Point* polygon_get(const Polygon* polygon, int position){
 	if (position <0 ){
 		position = ((int)polygon->count)+position;
 	}
-	
+
 	return &polygon->points[position];
 }
 
@@ -167,7 +167,8 @@ Point* point_set_y(Point* point, const double y){
 double point_distance(const Point* point_1, const Point* point_2){
 	double sum = abs(point_1->x-point_1->y) +  abs(point_2->x-point_2->y);
 	return sqrt(sum);	
-}
+}*/
+/*
 
 double polygon_perimeter(const Polygon* polygon){
 	double somme=0;
@@ -175,9 +176,47 @@ double polygon_perimeter(const Polygon* polygon){
 		somme+=point_distance(polygon->points[i],polygon->points[i+1]);
 	}
 	somme+=point_distance(polygon->points[polygon->count],polygon->points[0]);
-	
+
 	return somme;
 }
+*/
+Polygon* polygon_fwrite(const Polygon* polygon, FILE* stream){
+
+	if (fwrite(&polygon->count,sizeof(unsigned int),1,stream)==1 && fwrite(polygon->points,sizeof(Point),polygon->count,stream)==polygon->count){
+		return (Polygon*)polygon;
+	}
+	else {
+		return NULL;
+	}
+}
+
+Polygon* polygon_fread(Polygon* polygon, FILE* stream){
+	int count;
+	if(fread(&count,sizeof(unsigned int),1,stream) == 1 ){
+		Point * points = malloc(count * sizeof(Point));
+		if (points){
+			if(fread(points,sizeof(Point),count,stream) != count){
+				return NULL;
+			}
+			free(polygon->points);
+			polygon->count = count;
+			polygon->points = points;
+			return (Polygon*)polygon;
+		}else{
+			return NULL;
+		}
+	}else{
+		return NULL;
+	}
+
+}
+
+
+
+
+
+
+
 
 
 

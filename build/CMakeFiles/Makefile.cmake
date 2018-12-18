@@ -44,6 +44,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/test-write.dir/DependInfo.cmake"
   "CMakeFiles/test-to-string.dir/DependInfo.cmake"
   "CMakeFiles/test-append.dir/DependInfo.cmake"
   "CMakeFiles/test-create_destroy.dir/DependInfo.cmake"

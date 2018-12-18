@@ -144,6 +144,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test-write
+
+# Build rule for target.
+test-write: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-write
+.PHONY : test-write
+
+# fast build rule for target.
+test-write/fast:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/build
+.PHONY : test-write/fast
+
+#=============================================================================
 # Target rules for targets named test-to-string
 
 # Build rule for target.
@@ -240,6 +253,7 @@ polygon.o: polygon.c.o
 
 # target to build an object file
 polygon.c.o:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
@@ -255,6 +269,7 @@ polygon.i: polygon.c.i
 
 # target to preprocess a source file
 polygon.c.i:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
@@ -270,6 +285,7 @@ polygon.s: polygon.c.s
 
 # target to generate assembly for a file
 polygon.c.s:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
@@ -468,6 +484,33 @@ test-to-string.c.s:
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/test-to-string.c.s
 .PHONY : test-to-string.c.s
 
+test-write.o: test-write.c.o
+
+.PHONY : test-write.o
+
+# target to build an object file
+test-write.c.o:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/test-write.c.o
+.PHONY : test-write.c.o
+
+test-write.i: test-write.c.i
+
+.PHONY : test-write.i
+
+# target to preprocess a source file
+test-write.c.i:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/test-write.c.i
+.PHONY : test-write.c.i
+
+test-write.s: test-write.c.s
+
+.PHONY : test-write.s
+
+# target to generate assembly for a file
+test-write.c.s:
+	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/test-write.c.s
+.PHONY : test-write.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -478,6 +521,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... package_source"
 	@echo "... package"
+	@echo "... test-write"
 	@echo "... test-to-string"
 	@echo "... test-append"
 	@echo "... test"
@@ -510,6 +554,9 @@ help:
 	@echo "... test-to-string.o"
 	@echo "... test-to-string.i"
 	@echo "... test-to-string.s"
+	@echo "... test-write.o"
+	@echo "... test-write.i"
+	@echo "... test-write.s"
 .PHONY : help
 
 
