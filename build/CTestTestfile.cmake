@@ -14,5 +14,7 @@ add_test(test-init_finish[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--q
 add_test(test-init_finish[normal] "./test-init_finish")
 add_test(test-prepend[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-prepend")
 add_test(test-prepend[normal] "./test-prepend")
+add_test(test-remove[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-remove")
+add_test(test-remove[normal] "./test-remove")
 add_test(test-to-string[valgrind] "/usr/bin/valgrind" "--leak-check=full" "--quiet" "--error-exitcode=1" "./test-to-string")
 add_test(test-to-string[normal] "./test-to-string")

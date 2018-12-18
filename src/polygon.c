@@ -118,12 +118,27 @@ Polygon* polygon_append(Polygon* polygon, double x, double y){
 }
 
 
-/*
+
 Polygon* polygon_remove(Polygon* polygon, int position){
-	for (int i=0;i<polygon->count)
+	if (position <0 ){
+		position = (int)polygon->count+position;
+	}
+	if (abs(position) > (int)polygon->count){
+		return NULL;
+	}
+	
+	Point * tabPoints = malloc(sizeof(Point)*polygon->count-1);
+	for (int i=0;i<position;i++){
+			tabPoints[i]=polygon->points[i];
+	}
+	for (int i=position;i<polygon->count;i++){
+			tabPoints[i]=polygon->points[i+1];
+	}
+	free(polygon->points);
+	polygon->points=tabPoints;
+	return polygon;
 }
 
-*/
 
 
 

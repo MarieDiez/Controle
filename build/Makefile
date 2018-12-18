@@ -144,6 +144,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test-to-string
+
+# Build rule for target.
+test-to-string: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-to-string
+.PHONY : test-to-string
+
+# fast build rule for target.
+test-to-string/fast:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/build
+.PHONY : test-to-string/fast
+
+#=============================================================================
 # Target rules for targets named test-append
 
 # Build rule for target.
@@ -183,6 +196,19 @@ test-copy_clone/fast:
 .PHONY : test-copy_clone/fast
 
 #=============================================================================
+# Target rules for targets named test-remove
+
+# Build rule for target.
+test-remove: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-remove
+.PHONY : test-remove
+
+# fast build rule for target.
+test-remove/fast:
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/build
+.PHONY : test-remove/fast
+
+#=============================================================================
 # Target rules for targets named test-init_finish
 
 # Build rule for target.
@@ -208,31 +234,19 @@ test-prepend/fast:
 	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/build
 .PHONY : test-prepend/fast
 
-#=============================================================================
-# Target rules for targets named test-to-string
-
-# Build rule for target.
-test-to-string: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test-to-string
-.PHONY : test-to-string
-
-# fast build rule for target.
-test-to-string/fast:
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/build
-.PHONY : test-to-string/fast
-
 polygon.o: polygon.c.o
 
 .PHONY : polygon.o
 
 # target to build an object file
 polygon.c.o:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.o
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
 .PHONY : polygon.c.o
 
 polygon.i: polygon.c.i
@@ -241,12 +255,13 @@ polygon.i: polygon.c.i
 
 # target to preprocess a source file
 polygon.c.i:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.i
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
 .PHONY : polygon.c.i
 
 polygon.s: polygon.c.s
@@ -255,12 +270,13 @@ polygon.s: polygon.c.s
 
 # target to generate assembly for a file
 polygon.c.s:
+	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-init_finish.dir/build.make CMakeFiles/test-init_finish.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/polygon.c.s
-	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
 .PHONY : polygon.c.s
 
 test-append.o: test-append.c.o
@@ -398,6 +414,33 @@ test-prepend.c.s:
 	$(MAKE) -f CMakeFiles/test-prepend.dir/build.make CMakeFiles/test-prepend.dir/test-prepend.c.s
 .PHONY : test-prepend.c.s
 
+test-remove.o: test-remove.c.o
+
+.PHONY : test-remove.o
+
+# target to build an object file
+test-remove.c.o:
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/test-remove.c.o
+.PHONY : test-remove.c.o
+
+test-remove.i: test-remove.c.i
+
+.PHONY : test-remove.i
+
+# target to preprocess a source file
+test-remove.c.i:
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/test-remove.c.i
+.PHONY : test-remove.c.i
+
+test-remove.s: test-remove.c.s
+
+.PHONY : test-remove.s
+
+# target to generate assembly for a file
+test-remove.c.s:
+	$(MAKE) -f CMakeFiles/test-remove.dir/build.make CMakeFiles/test-remove.dir/test-remove.c.s
+.PHONY : test-remove.c.s
+
 test-to-string.o: test-to-string.c.o
 
 .PHONY : test-to-string.o
@@ -435,13 +478,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... package_source"
 	@echo "... package"
+	@echo "... test-to-string"
 	@echo "... test-append"
 	@echo "... test"
 	@echo "... test-create_destroy"
 	@echo "... test-copy_clone"
+	@echo "... test-remove"
 	@echo "... test-init_finish"
 	@echo "... test-prepend"
-	@echo "... test-to-string"
 	@echo "... polygon.o"
 	@echo "... polygon.i"
 	@echo "... polygon.s"
@@ -460,6 +504,9 @@ help:
 	@echo "... test-prepend.o"
 	@echo "... test-prepend.i"
 	@echo "... test-prepend.s"
+	@echo "... test-remove.o"
+	@echo "... test-remove.i"
+	@echo "... test-remove.s"
 	@echo "... test-to-string.o"
 	@echo "... test-to-string.i"
 	@echo "... test-to-string.s"

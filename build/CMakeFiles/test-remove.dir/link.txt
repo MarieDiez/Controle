@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/test-remove.dir/test-remove.c.o CMakeFiles/test-remove.dir/polygon.c.o  -o test-remove  -L"/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src" -Wl,-rpath,"/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src" -lpolygon 
