@@ -211,7 +211,20 @@ Polygon* polygon_fread(Polygon* polygon, FILE* stream){
 
 }
 
-
+const char* polygon_to_string(const Polygon* polygon){
+	static char ch[100];
+	sprintf(ch,"%s","[");
+	for(int i = 0 ; i < polygon->count ; i++){
+		if(i < polygon->count-1){
+			sprintf(ch,"%s(%g;%g)",ch,polygon->points[i].x,polygon->points[i].y);
+		}
+		if(i == polygon->count-1){
+			sprintf(ch,"%s,",ch);
+		}
+	}
+	sprintf(ch,"%s]",ch);
+	return ch;	
+}
 
 
 

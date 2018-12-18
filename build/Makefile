@@ -170,6 +170,19 @@ test-to-string/fast:
 .PHONY : test-to-string/fast
 
 #=============================================================================
+# Target rules for targets named test-toString
+
+# Build rule for target.
+test-toString: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test-toString
+.PHONY : test-toString
+
+# fast build rule for target.
+test-toString/fast:
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/build
+.PHONY : test-toString/fast
+
+#=============================================================================
 # Target rules for targets named test-append
 
 # Build rule for target.
@@ -255,6 +268,7 @@ polygon.o: polygon.c.o
 polygon.c.o:
 	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.o
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.o
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.o
@@ -271,6 +285,7 @@ polygon.i: polygon.c.i
 polygon.c.i:
 	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.i
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.i
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.i
@@ -287,6 +302,7 @@ polygon.s: polygon.c.s
 polygon.c.s:
 	$(MAKE) -f CMakeFiles/test-write.dir/build.make CMakeFiles/test-write.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/polygon.c.s
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-append.dir/build.make CMakeFiles/test-append.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-create_destroy.dir/build.make CMakeFiles/test-create_destroy.dir/polygon.c.s
 	$(MAKE) -f CMakeFiles/test-copy_clone.dir/build.make CMakeFiles/test-copy_clone.dir/polygon.c.s
@@ -484,6 +500,33 @@ test-to-string.c.s:
 	$(MAKE) -f CMakeFiles/test-to-string.dir/build.make CMakeFiles/test-to-string.dir/test-to-string.c.s
 .PHONY : test-to-string.c.s
 
+test-toString.o: test-toString.c.o
+
+.PHONY : test-toString.o
+
+# target to build an object file
+test-toString.c.o:
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/test-toString.c.o
+.PHONY : test-toString.c.o
+
+test-toString.i: test-toString.c.i
+
+.PHONY : test-toString.i
+
+# target to preprocess a source file
+test-toString.c.i:
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/test-toString.c.i
+.PHONY : test-toString.c.i
+
+test-toString.s: test-toString.c.s
+
+.PHONY : test-toString.s
+
+# target to generate assembly for a file
+test-toString.c.s:
+	$(MAKE) -f CMakeFiles/test-toString.dir/build.make CMakeFiles/test-toString.dir/test-toString.c.s
+.PHONY : test-toString.c.s
+
 test-write.o: test-write.c.o
 
 .PHONY : test-write.o
@@ -523,6 +566,7 @@ help:
 	@echo "... package"
 	@echo "... test-write"
 	@echo "... test-to-string"
+	@echo "... test-toString"
 	@echo "... test-append"
 	@echo "... test"
 	@echo "... test-create_destroy"
@@ -554,6 +598,9 @@ help:
 	@echo "... test-to-string.o"
 	@echo "... test-to-string.i"
 	@echo "... test-to-string.s"
+	@echo "... test-toString.o"
+	@echo "... test-toString.i"
+	@echo "... test-toString.s"
 	@echo "... test-write.o"
 	@echo "... test-write.i"
 	@echo "... test-write.s"
