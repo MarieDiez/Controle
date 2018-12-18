@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <math.h>
 #include "./polygon.h"
 #include "./polygon.inc"
 
@@ -81,12 +82,11 @@ Polygon* polygon_prepend(Polygon* polygon, double x, double y){
 }
 
 Polygon* polygon_insert(Polygon* polygon, int position, double x, double y){
-	if (position > (int)polygon->count){
-		return NULL;
+	if (position < 0){	
+		position = (int)polygon->count - position +1 ;		
 	}
-	if (position < 0){
-		position = (int)polygon->count;
-		
+	if (abs(position) > (int)polygon->count){
+		return NULL;
 	}
 
 	Point pts;
@@ -117,11 +117,13 @@ Polygon* polygon_append(Polygon* polygon, double x, double y){
 	return polygon_insert(polygon,polygon->count,x,y);
 }
 
-Polygon* polygon_remove(Polygon* polygon, int position){
 
+/*
+Polygon* polygon_remove(Polygon* polygon, int position){
+	for (int i=0;i<polygon->count)
 }
 
-
+*/
 
 
 

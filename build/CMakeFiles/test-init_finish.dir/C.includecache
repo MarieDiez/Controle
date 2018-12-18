@@ -23,6 +23,8 @@ stdlib.h
 -
 assert.h
 -
+math.h
+-
 ./polygon.h
 /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.h
 ./polygon.inc

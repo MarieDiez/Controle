@@ -14,12 +14,10 @@ stdio.h
 
 /win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/./polygon.inc
 
-/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/polygon.c
-stdbool.h
--
-stdio.h
--
+/win/Users/LoïcetMarie/Documents/Marie/Cours/Fac/L2/S3/Programmation C/Controle/src/test-append.c
 stdlib.h
+-
+string.h
 -
 assert.h
 -

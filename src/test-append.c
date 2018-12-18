@@ -18,11 +18,11 @@ int main(void) {
     
     polygon = polygon_append(polygon,5,5);
     polygon = polygon_append(polygon,50,50);
-    polygon = polygon_insert(polygon,-1,10,10);
-    polygon = polygon_insert(polygon,0,15,15);
+    polygon = polygon_insert(polygon,5,10,10);
+ 
 
     
-    for(int i = 0; i<4 ; i++)
+    for(int i = 0; i<3 ; i++)
       if (polygon != NULL){
        printf("x : %.2f   y: %.2f\n",polygon->points[i].x,polygon->points[i].y);
       }
@@ -30,7 +30,7 @@ int main(void) {
       printf("%d\n",i);
      }
     
-    polygon_destroy(polygon);
+   // polygon_destroy(polygon);
    
   }
   
